@@ -1,0 +1,102 @@
+{
+  "_comment": "Single source of truth for the profile card. Edit this, then run `node generate.mjs` to rebuild assets/profile.svg and README.md. Nothing here is private; keep it that way (no employer name, no phone).",
+
+  "identity": {
+    "name": "Dmitrii Filippov",
+    "eyebrowLeft": "IDENTITY / ASCII SIGNAL",
+    "eyebrowRight": "PROFILE / SYSTEM OVERVIEW",
+    "prompt": "Dmitrii Filippov",
+    "roleLine": "Engineering Manager & Staff Engineer",
+    "roleSub": "AI platforms · San Francisco",
+    "operatorLabel": "— OPERATOR SIGNAL",
+    "operatorLine": "turning LLM chaos into reliable pipelines"
+  },
+
+  "sections": [
+    {
+      "title": "",
+      "rows": [
+        { "key": "OS",      "value": "Engineering Manager + Staff Engineer" },
+        { "key": "Uptime",  "value": "13y 11m on GitHub · 10y+ shipping", "accent": true },
+        { "key": "Host",    "value": "San Francisco, CA · UTC−8" },
+        { "key": "Kernel",  "value": "AI agents · high-load · distributed infra" },
+        { "key": "Runtime", "value": "Claude Code · Codex · Vercel AI SDK" }
+      ]
+    },
+    {
+      "title": "— BUILD SURFACE",
+      "rows": [
+        { "key": "Languages.Code", "value": "Java · Kotlin · TypeScript · Python", "accent": true },
+        { "key": "Languages.Real", "value": "Russian · English" },
+        { "key": "Focus",          "value": "AI pipelines · high-load · platform" },
+        { "key": "Building",       "value": "autonomous content platform · agent workflows" }
+      ]
+    },
+    {
+      "title": "— CONTACT",
+      "rows": [
+        { "key": "GitHub",   "value": "@DimaPhil", "accent": true },
+        { "key": "LinkedIn", "value": "dmitrii-filippov", "accent": true },
+        { "key": "Telegram", "value": "@lilfeel", "accent": true },
+        { "key": "Email",    "value": "dima239philippov@gmail.com" }
+      ]
+    }
+  ],
+
+  "statsLabel": "— GITHUB SIGNAL",
+  "stats": [
+    { "label": "PUBLIC REPOS", "value": "39" },
+    { "label": "ORIGINAL",     "value": "34" },
+    { "label": "STARS",        "value": "7" },
+    { "label": "FOLLOWERS",    "value": "17" }
+  ],
+
+  "links": [
+    { "label": "GitHub",   "href": "https://github.com/DimaPhil" },
+    { "label": "LinkedIn", "href": "https://www.linkedin.com/in/dmitrii-filippov-7557ab137/" },
+    { "label": "Telegram", "href": "https://t.me/lilfeel" },
+    { "label": "Email",    "href": "mailto:dima239philippov@gmail.com" }
+  ],
+
+  "selected": [
+    { "repo": "media-ingester",     "desc": "asynchronously ingest & understand media (transcription, parsing) behind a REST API." },
+    { "repo": "mail-digester",      "desc": "filter and recombine newsletters and high-volume inboxes into a clean digest UI." },
+    { "repo": "nutrition-tracker",  "desc": "track nutrition from a photo of your food." },
+    { "repo": "telegram-proxy-api", "desc": "your own Telegram data as a FastAPI service over MTProto." }
+  ],
+
+  "githubUser": "DimaPhil",
+  "footerNote": "The terminal card is generated from public data with the scripts in this repo. No private or employer information is included.",
+
+  "portrait": {
+    "cols": 92,
+    "charAspect": 0.55,
+    "ramp": ".:-=+*oO#%@$",
+    "bgLumaCut": 232,
+    "bgSatCut": 0.10,
+    "contrast": 1.4,
+    "densityFloor": 0.16,
+    "satBoost": 1.3,
+    "shadowLift": 24,
+    "gain": 1.05
+  },
+
+  "theme": {
+    "bgStops": ["#05070b", "#0a0f17", "#080b12"],
+    "cyanGlow": "#1dd3b0",
+    "violetGlow": "#7c5cff",
+    "eyebrow": "#8793a8",
+    "hero": "#f4f7fb",
+    "key": "#ffb454",
+    "dots": "#263143",
+    "value": "#c9d4e5",
+    "accent": "#61e7c6",
+    "section": "#8c98ad",
+    "statBoxFill": "#0d141f",
+    "statBoxStroke": "#253146",
+    "statLabel": "#8793a8",
+    "statValue": "#eaf2ff",
+    "portraitPanel": "#0a1017",
+    "divider": "#1b2432"
+  }
+}
