@@ -36,8 +36,8 @@ const P = data.portrait;
 /* ----------------------------------------------------------------------- *
  * Canvas + layout geometry (all coordinates in the 1200×760 viewBox).
  * ----------------------------------------------------------------------- */
-const W = 1200, H = 760;
-const PORTRAIT = { x: 42, y: 112, w: 364, h: 400 };   // ASCII portrait region
+const W = 1200, H = 700;
+const PORTRAIT = { x: 42, y: 96, w: 364, h: 400 };    // ASCII portrait region (name removed → moved up)
 const R = { keyX: 488, dotsX: 700, valueX: 786, right: 1122 };
 const STAT = { w: 148, h: 56, gap: 14, xs: [488, 650, 812, 974] };
 
@@ -143,7 +143,7 @@ const esc = (s) => String(s)
 
 function buildSVG(grid) {
   const { cells, fontSize } = portraitCells(grid);
-  const rowH = 32, headerAdvance = 36, sectionGap = 8;
+  const rowH = 40, headerAdvance = 42, sectionGap = 8;
 
   // Right-hand key·dots·value table (vertical cursor flows top-down).
   const right = [];
@@ -202,9 +202,8 @@ function buildSVG(grid) {
     <style>
       text { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
       .eyebrow  { font-size: 12px; fill: ${T.eyebrow}; letter-spacing: 2.0px; font-weight: 700; }
-      .hero     { font-size: 25px; fill: ${T.hero}; font-weight: 700; letter-spacing: -0.5px; }
-      .role     { font-size: 14px; fill: ${T.value}; }
-      .roleSub  { font-size: 13px; fill: ${T.accent}; }
+      .hero     { font-size: 24px; fill: ${T.hero}; font-weight: 700; letter-spacing: -0.5px; }
+      .tagHero  { font-size: 19px; fill: ${T.accent}; font-weight: 700; letter-spacing: -0.3px; }
       .key      { font-size: 14px; fill: ${T.key}; font-weight: 700; }
       .dots     { font-size: 14px; fill: ${T.dots}; letter-spacing: 1.5px; }
       .value    { font-size: 14px; fill: ${T.value}; }
@@ -214,7 +213,7 @@ function buildSVG(grid) {
       .statLabel{ font-size: 10px; fill: ${T.statLabel}; letter-spacing: 1.2px; font-weight: 700; }
       .statValue{ font-size: 22px; fill: ${T.statValue}; font-weight: 700; }
       .px       { font-size: ${fontSize}px; }
-      .oline    { font-size: 13px; fill: ${T.accent}; }
+      .oline    { font-size: 13px; fill: ${T.value}; }
     </style>
   </defs>
 
@@ -222,22 +221,22 @@ function buildSVG(grid) {
   <rect x="0" y="0" width="${W}" height="${H}" rx="24" fill="url(#cyanGlow)"/>
   <rect x="0" y="0" width="${W}" height="${H}" rx="24" fill="url(#violetGlow)"/>
   <rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="24" fill="none" stroke="${T.statBoxStroke}" stroke-opacity="0.6"/>
-  <line x1="447" y1="48" x2="447" y2="712" stroke="${T.divider}" stroke-opacity="0.7"/>
+  <line x1="447" y1="48" x2="447" y2="${H - 44}" stroke="${T.divider}" stroke-opacity="0.7"/>
 
-  <!-- LEFT: identity + ASCII portrait -->
+  <!-- LEFT: ASCII portrait + positioning -->
   <text x="54" y="60" class="eyebrow">${esc(id.eyebrowLeft)}</text>
-  <text x="54" y="91" class="hero">${esc(id.name)}</text>
   <rect x="${PORTRAIT.x}" y="${PORTRAIT.y}" width="${PORTRAIT.w}" height="${PORTRAIT.h}" rx="20" fill="${T.portraitPanel}"/>
   <g clip-path="url(#portraitClip)" class="px">${cells}</g>
   <rect x="${PORTRAIT.x}" y="${PORTRAIT.y}" width="${PORTRAIT.w}" height="${PORTRAIT.h}" rx="20" fill="none" stroke="${T.statBoxStroke}" stroke-opacity="0.8"/>
-  <text x="54" y="548" class="role">${esc(id.roleLine)}</text>
-  <text x="54" y="570" class="roleSub">${esc(id.roleSub)}</text>
-  <text x="54" y="638" class="section">${esc(id.operatorLabel)}</text>
-  <text x="54" y="666" class="oline">${esc(id.operatorLine)}</text>
+  <text x="54" y="530" class="tagHero">${esc(id.tagline1)}</text>
+  <text x="54" y="556" class="tagHero">${esc(id.tagline2)}</text>
+  <text x="54" y="600" class="section">${esc(id.credLabel)}</text>
+  <text x="54" y="628" class="oline">${esc(id.cred1)}</text>
+  <text x="54" y="650" class="oline">${esc(id.cred2)}</text>
 
-  <!-- RIGHT: system overview -->
+  <!-- RIGHT: positioning + signal -->
   <text x="${R.keyX}" y="60" class="eyebrow">${esc(id.eyebrowRight)}</text>
-  <text x="${R.keyX}" y="92" class="hero">${esc(id.prompt)}</text>
+  <text x="${R.keyX}" y="92" class="hero">${esc(id.roleHero)}</text>
   ${right.join('\n  ')}
 </svg>
 `;

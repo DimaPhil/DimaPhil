@@ -1,72 +1,71 @@
 {
-  "_comment": "Single source of truth for the profile card. Edit this, then run `node generate.mjs` to rebuild assets/profile.svg and README.md. Nothing here is private; keep it that way (no employer name, no phone).",
+  "_comment": "Single source of truth. Edit, then run `node generate.mjs` to rebuild README.md + assets/profile.svg. Keep it public-safe: no employer names, no phone. All impact claims must be true and verifiable.",
 
   "identity": {
     "name": "Dmitrii Filippov",
-    "eyebrowLeft": "IDENTITY / ASCII SIGNAL",
+    "eyebrowLeft": "SAN FRANCISCO · UTC−8",
     "eyebrowRight": "PROFILE / SYSTEM OVERVIEW",
-    "prompt": "Dmitrii Filippov",
-    "roleLine": "Engineering Manager & Staff Engineer",
-    "roleSub": "AI platforms · San Francisco",
-    "operatorLabel": "— OPERATOR SIGNAL",
-    "operatorLine": "turning LLM chaos into reliable pipelines"
+    "roleHero": "Engineering Manager · Staff Engineer",
+    "tagline1": "I build AI platforms and lead",
+    "tagline2": "the teams that ship them.",
+    "credLabel": "— EDUCATION & AWARDS",
+    "cred1": "M.Sc. Computer Science · ITMO University",
+    "cred2": "ACM ICPC Silver medalist (NEERC)"
   },
 
   "sections": [
     {
       "title": "",
       "rows": [
-        { "key": "OS",      "value": "Engineering Manager + Staff Engineer" },
-        { "key": "Uptime",  "value": "13y 11m on GitHub · 10y+ shipping", "accent": true },
-        { "key": "Host",    "value": "San Francisco, CA · UTC−8" },
-        { "key": "Kernel",  "value": "AI agents · high-load · distributed infra" },
-        { "key": "Runtime", "value": "Claude Code · Codex · Vercel AI SDK" }
+        { "key": "Focus",    "value": "AI platforms · agents · LLM pipelines", "accent": true },
+        { "key": "Domains",  "value": "high-load · distributed systems" },
+        { "key": "Leading",  "value": "teams shipping autonomous AI workflows" },
+        { "key": "Building", "value": "developer tooling · automation" },
+        { "key": "Uptime",   "value": "10+ yrs shipping · 13y on GitHub" }
       ]
     },
     {
-      "title": "— BUILD SURFACE",
+      "title": "— STACK",
       "rows": [
-        { "key": "Languages.Code", "value": "Java · Kotlin · TypeScript · Python", "accent": true },
-        { "key": "Languages.Real", "value": "Russian · English" },
-        { "key": "Focus",          "value": "AI pipelines · high-load · platform" },
-        { "key": "Building",       "value": "autonomous content platform · agent workflows" }
-      ]
-    },
-    {
-      "title": "— CONTACT",
-      "rows": [
-        { "key": "GitHub",   "value": "@DimaPhil", "accent": true },
-        { "key": "LinkedIn", "value": "dmitrii-filippov", "accent": true },
-        { "key": "Telegram", "value": "@lilfeel", "accent": true },
-        { "key": "Email",    "value": "dima239philippov@gmail.com" }
+        { "key": "Languages", "value": "TypeScript · Python · Kotlin · Java", "accent": true },
+        { "key": "Backend",   "value": "Node.js · Java Spring · FastAPI" },
+        { "key": "AI",        "value": "LLM agents · RAG · vector search" },
+        { "key": "Systems",   "value": "microservices · event-driven · scale" },
+        { "key": "Tooling",   "value": "Codex · Claude Code · Vercel AI SDK" }
       ]
     }
   ],
 
-  "statsLabel": "— GITHUB SIGNAL",
+  "_parked": {
+    "_comment": "Real, verifiable impact metrics — HIDDEN for now because the current employer views this public profile. To publish later: put the two rows back into sections[0].rows, and swap peakScaleTile back into stats[] (replacing the ON GITHUB tile).",
+    "impactRow": { "key": "Impact", "value": "architected systems to ~1.5B req/day" },
+    "costRow":   { "key": "Cost",   "value": "cut cloud infra spend by 40%+" },
+    "peakScaleTile": { "label": "PEAK SCALE", "value": "1.5B/day" }
+  },
+
+  "statsLabel": "— TRACK RECORD",
   "stats": [
-    { "label": "PUBLIC REPOS", "value": "39" },
-    { "label": "ORIGINAL",     "value": "34" },
-    { "label": "STARS",        "value": "7" },
-    { "label": "FOLLOWERS",    "value": "17" }
+    { "label": "EXPERIENCE", "value": "10+ yrs" },
+    { "label": "ON GITHUB",  "value": "13 yrs" },
+    { "label": "TEAMS LED",  "value": "up to 6" },
+    { "label": "ACM ICPC",   "value": "Silver" }
   ],
 
   "links": [
-    { "label": "GitHub",   "href": "https://github.com/DimaPhil" },
     { "label": "LinkedIn", "href": "https://www.linkedin.com/in/dmitrii-filippov-7557ab137/" },
-    { "label": "Telegram", "href": "https://t.me/lilfeel" },
-    { "label": "Email",    "href": "mailto:dima239philippov@gmail.com" }
+    { "label": "Email",    "href": "mailto:dima239philippov@gmail.com" },
+    { "label": "Telegram", "href": "https://t.me/lilfeel" }
   ],
 
   "selected": [
-    { "repo": "media-ingester",     "desc": "asynchronously ingest & understand media (transcription, parsing) behind a REST API." },
-    { "repo": "mail-digester",      "desc": "filter and recombine newsletters and high-volume inboxes into a clean digest UI." },
-    { "repo": "nutrition-tracker",  "desc": "track nutrition from a photo of your food." },
-    { "repo": "telegram-proxy-api", "desc": "your own Telegram data as a FastAPI service over MTProto." }
+    { "repo": "media-ingester",     "desc": "async service to ingest & understand media (transcription, parsing) behind a REST API." },
+    { "repo": "mail-digester",      "desc": "filters and recombines high-volume inboxes and newsletters into a clean digest UI." },
+    { "repo": "telegram-proxy-api", "desc": "your own Telegram data as a FastAPI service over MTProto." },
+    { "repo": "nutrition-tracker",  "desc": "logs nutrition from a single photo of your food." }
   ],
 
   "githubUser": "DimaPhil",
-  "footerNote": "The terminal card is generated from public data with the scripts in this repo. No private or employer information is included.",
+  "footerNote": "Generated from public data with the scripts in this repo — no private or employer information. All figures are verifiable.",
 
   "portrait": {
     "cols": 92,
