@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./assets/profile.svg" width="100%" alt="Dmitrii Filippov — terminal profile" />
+  <img src="./assets/profile.svg?v=50ac93e7" width="100%" alt="Dmitrii Filippov — terminal profile" />
 </div>
 
 <div align="center">

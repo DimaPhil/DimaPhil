@@ -27,6 +27,7 @@ import { spawnSync } from 'node:child_process';
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createHash } from 'node:crypto';
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const data = JSON.parse(readFileSync(join(ROOT, 'data.json'), 'utf8'));
@@ -245,13 +246,14 @@ function buildSVG(grid) {
 /* ----------------------------------------------------------------------- *
  * 4. README.md assembly.
  * ----------------------------------------------------------------------- */
-function buildREADME() {
+function buildREADME(assetVersion) {
   const links = data.links.map((l) => `  <a href="${l.href}">${l.label}</a>`).join(' ·\n');
   const selected = data.selected
     .map((s) => `- [\`${s.repo}\`](https://github.com/${data.githubUser}/${s.repo}) — ${s.desc}`)
     .join('\n');
+  // ?v=<hash> busts GitHub's camo image cache whenever the SVG content changes.
   return `<div align="center">
-  <img src="./assets/profile.svg" width="100%" alt="${data.identity.name} — terminal profile" />
+  <img src="./assets/profile.svg?v=${assetVersion}" width="100%" alt="${data.identity.name} — terminal profile" />
 </div>
 
 <div align="center">
@@ -277,8 +279,9 @@ const grid = pixelGrid(join(ROOT, 'photo.jpg'), cols, rows);
 
 mkdirSync(join(ROOT, 'assets'), { recursive: true });
 const svg = buildSVG(grid);
+const assetVersion = createHash('sha1').update(svg).digest('hex').slice(0, 8);
 writeFileSync(join(ROOT, 'assets', 'profile.svg'), svg, 'utf8');
-writeFileSync(join(ROOT, 'README.md'), buildREADME(), 'utf8');
+writeFileSync(join(ROOT, 'README.md'), buildREADME(assetVersion), 'utf8');
 
 console.log(`✓ portrait grid ${cols}×${rows} (${grid.data.length / 3} px)`);
 console.log(`✓ assets/profile.svg  (${(svg.length / 1024).toFixed(0)} KB)`);
