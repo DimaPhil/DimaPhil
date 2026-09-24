@@ -13,8 +13,5 @@
 ### Selected systems
 
 - [`media-ingester`](https://github.com/DimaPhil/media-ingester) — async service to ingest & understand media (transcription, parsing) behind a REST API.
-- [`mail-digester`](https://github.com/DimaPhil/mail-digester) — filters and recombines high-volume inboxes and newsletters into a clean digest UI.
 - [`telegram-proxy-api`](https://github.com/DimaPhil/telegram-proxy-api) — your own Telegram data as a FastAPI service over MTProto.
-- [`nutrition-tracker`](https://github.com/DimaPhil/nutrition-tracker) — logs nutrition from a single photo of your food.
-
-<sub>Generated from public data with the scripts in this repo — no private or employer information. All figures are verifiable.</sub>
+- [`calorie-ledger`](https://github.com/DimaPhil/calorie-ledger) — a small personal MCP server & a standalone service that allows to track daily nurtition.
